@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require('cors');
 require("./db/connect");
 const Student = require("./models/students");
 const studentRouter = require("./routers/student")
