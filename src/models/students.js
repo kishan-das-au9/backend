@@ -13,24 +13,13 @@ const studentSchema = new mongoose.Schema(
       
       minlength: 3
     },
-    email: {
+    description: {
       type: String,
-      
-      unique: [true, "Email already present"],
-      validate(value) {
-        if (!validator.isEmail(value)) {
-          throw new Error("invalid email")
-        }
-      }
+
     },
-    phone: {
-      type: Number,
-      
-      min: 10,
-      unique: true
-    },
-    address:{
-      type:Array,
+
+    status:{
+      type:String,
         
     }
 
