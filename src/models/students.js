@@ -30,7 +30,7 @@ const studentSchema = new mongoose.Schema(
       unique: true
     },
     address:{
-      type:String,
+      type:Array,
         
     }
 
