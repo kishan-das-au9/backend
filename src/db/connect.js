@@ -4,7 +4,6 @@ mongoose.connect("mongodb+srv://kishan_04:kishan2809@cluster0.bgcvf.mongodb.net/
   useCreateIndex: true,
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useFindAndModify:false
 }).then(()=> {
   console.log("connection successful");
 

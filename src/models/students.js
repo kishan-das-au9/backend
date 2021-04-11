@@ -3,14 +3,13 @@ const validator = require("validator");
 
 const studentSchema = new mongoose.Schema(
   {
-    id:{type: String},
+    id: String,
 
-    task_type: {type: String, minlength: 3},
+    task_type: String,
+
+    task_name: Array
+      
     
-    task_name: {
-      task_id: {type: String},
-      name:{type: String}
-    }
 
   }
 )
