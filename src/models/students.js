@@ -3,38 +3,13 @@ const validator = require("validator");
 
 const studentSchema = new mongoose.Schema(
   {
-    id:{
-      type: String
-    },
-    "image_url": String,
+    id:{type: String},
 
-    name: {
-      type: String,
-      
-      minlength: 3
-    },
-    email: {
-      type: String,
-      
-      unique: [true, "Email already present"],
-      validate(value) {
-        if (!validator.isEmail(value)) {
-          throw new Error("invalid email")
-        }
-      }
-    },
-    phone: {
-      type: Number,
-      
-      min: 10,
-      unique: true
-    },
-    address:{
-      type:String,
-        
-    },
-    task: {
-      type: Array
+    task_type: {type: String, minlength: 3},
+    
+    task_name: {
+      task_id: {type: String},
+      name:{type: String}
     }
 
   }
