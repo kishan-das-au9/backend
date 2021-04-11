@@ -1,17 +1,17 @@
 const express = require("express");
 // 1 creating a new router
 const router = new express.Router();
-const Student = require("../models/students");
+const todo = require("../models/todos");
 
 // 2 defining the router
 router.get("/kishan", (req, res)=> {
   res.send("HELLO");
 })
 
-router.post("/students", async (req, res) => {
+router.post("/todo", async (req, res) => {
   try {
     // console.log(req.body);
-    const user = new Student(req.body);
+    const user = new todo(req.body);
 
     const createUser = await user.save();
     res.status(201).send(createUser)
@@ -25,10 +25,10 @@ router.post("/students", async (req, res) => {
 })
 
 
-router.get("/students", async (req, res) => {
+router.get("/todo", async (req, res) => {
   try {
-      const studentsData = await Student.find();
-      res.send(studentsData);
+      const todosData = await todo.find();
+      res.send(todosData);
   }
   catch (e) {
     res.send(e);
@@ -37,15 +37,15 @@ router.get("/students", async (req, res) => {
 })
 
 
-router.get("/students/:id", async (req, res) => {
+router.get("/todo/:id", async (req, res) => {
   try {
       const _id = req.params.id;
-      const studentData = await Student.findOne({_id});
+      const todoData = await todo.findOne({_id});
 
-      if (!studentData){
+      if (!todoData){
         return res.status(404).send()
       }
-      else{res.send(studentData);}
+      else{res.send(todoData);}
       
   }
   catch (e) {
@@ -55,13 +55,13 @@ router.get("/students/:id", async (req, res) => {
 })
 
 
-router.patch("/students/:id", async(req,res)=>{
+router.patch("/todo/:id", async(req,res)=>{
   try {
     const _id = req.params.id;
-    const updateStudent = await Student.findByIdAndUpdate(_id, req.body, {
+    const updatetodo = await todo.findByIdAndUpdate(_id, req.body, {
       new:true
     })
-    res.send(updateStudent)
+    res.send(updatetodo)
   } catch (e) {
     return res.status(404).send(e)
     
@@ -69,14 +69,14 @@ router.patch("/students/:id", async(req,res)=>{
 })
  
 
-router.delete("/students/:id", async (req, res) => {
+router.delete("/todo/:id", async (req, res) => {
   try {
     // const _id = req.params.id;
-    const deleteStudent = await Student.findByIdAndDelete(req.params.id)
+    const deletetodo = await todo.findByIdAndDelete(req.params.id)
     if (!req.params.id){
       return res.status(400).send();
     }
-    res.send(deleteStudent)
+    res.send(deletetodo)
   }
   catch (e) {
     res.status(500).send(e);

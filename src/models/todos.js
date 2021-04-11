@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
 
-const studentSchema = new mongoose.Schema(
+const todoSchema = new mongoose.Schema(
   {
     id:{
       type: String
@@ -26,5 +26,5 @@ const studentSchema = new mongoose.Schema(
   }
 )
 //mongoose.model('collection','schema)
-const Student = new mongoose.model('Student', studentSchema);
-module.exports = Student;
+const todo = new mongoose.model('todo', todoSchema);
+module.exports = todo;
