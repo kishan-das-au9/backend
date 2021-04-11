@@ -6,32 +6,22 @@ const studentSchema = new mongoose.Schema(
     id:{
       type: String
     },
-    "image_url": String,
 
     name: {
       type: String,
-      
-      minlength: 3
     },
-    email: {
+    
+    description: {
       type: String,
-      
-      unique: [true, "Email already present"],
-      validate(value) {
-        if (!validator.isEmail(value)) {
-          throw new Error("invalid email")
-        }
-      }
     },
-    phone: {
-      type: Number,
-      
-      min: 10,
-      unique: true
+
+    status:{
+      type:String,
     },
-    address:{
-      type:Array,
-        
+
+    user_assigned:{
+      type:String,
+
     }
 
   }
