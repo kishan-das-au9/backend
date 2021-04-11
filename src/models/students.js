@@ -3,26 +3,20 @@ const validator = require("validator");
 
 const studentSchema = new mongoose.Schema(
   {
-    id:{
-      type: String
-    },
+    id: String,
 
-    name: {
-      type: String,
-    },
-    
-    description: {
-      type: String,
-    },
 
-    status:{
-      type:String,
-    },
+    name: String,
 
-    user_assigned:{
-      type:String,
 
-    }
+    description: String,
+
+    status: String,
+
+
+    user_assigned: String
+
+
 
   }
 )
