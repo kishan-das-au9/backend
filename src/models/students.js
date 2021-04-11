@@ -6,10 +6,10 @@ const studentSchema = new mongoose.Schema(
     id:{
       type: String
     },
-    "image_url": String
+    "image_url": String,
 
     name: {
-      type: String
+      type: String,
       
       minlength: 3
     },
