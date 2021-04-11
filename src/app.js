@@ -10,6 +10,8 @@ const port = process.env.PORT || 8700;
 app.use(cors());
 
 app.use(express.json());
+
+
 app.use(studentRouter)
 
 app.listen(port, () => {

@@ -32,6 +32,9 @@ const studentSchema = new mongoose.Schema(
     address:{
       type:String,
         
+    },
+    task: {
+      type: Array
     }
 
   }
